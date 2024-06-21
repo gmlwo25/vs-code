@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <style>
+    #container {
+      width: 600px;
+      margin: 10px auto;
+    }
+    /*
+    폼에서 사용하는 태그
+    <form> <fieldset> <legend> : 필드셋제목
+      <input> 입력할 필드 type = "text",  "radio", "checkbox", "date", "password"
+                        "number", tel, datetime, time, month, year, email, url, search
+                    버튼관련 submit, reset, image
+                    file, hidden
+      <imput> 태그의 속성
+        : autofocus, placeholder:필드에 힌트 표시
+        , readonly, required, min, max, step, maxlength, size, 
+        <textarea> : 여러 줄  입력 시 속성: cols, rows 
+        <select> <option value=""></option> : 선택 박스 
+    */
+  </style>
+</head>
+<body>
+  <div id="contaimer">
+    <h1>회원 가입을 환영합니다.</h1>
+    <form action="">
+      <fieldset>
+        <legend>사용자정보</legend>
+        <ul>
+          <li>
+            <label for="uid">아이디</label>
+            <input type="text" id="uid" autofocus placeholder="4자~10자 사이, 공백없이" required>
+          </li>
+          <li>
+            <label for="uemail">이메일</label>
+            <input type="email" id="uemail" required>
+          </li>
+          <li>
+            <label for="pwd1">비밀번호</label>
+            <input type="password" id="pwd1" placeholder="문자와 숫자, 특수 기호 포함" required>
+          </li>
+          <li>
+            <label for="pwd2">비밀번호 확인</label>
+            <input type="password" id="pwd2">
+          </li>
+          <li>
+            <label for="path">가입 경로</label>
+            <select name="path" id="path">
+              <option value="blog">블로그</option>
+              <option value="search">검색</option>
+              <option value="sns">SNS</option>
+              <option value="etc">기타</option>
+            </select>
+          </li>
+          <li>
+            <label for="memo">메모</label>
+            <textarea name="memo" id="memo" cols="40" rows="4" placeholder="남길 말씀"></textarea>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>이벤트와 새로운 소식</legend>
+        <input type="radio" name="miiling" id="mailing_y" value="yes">
+        <label for="mailing_y">메일 수신</label>
+        <input type="radio" name="miiling" id="mailing_n" value="no" checked>
+        <label for="mailing_y">메일 수신</label>
+      </fieldset>
+      <div id="buttons">
+        <input type="submit" value="가입하기">
+        <input type="reset" value="취소">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
