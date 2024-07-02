@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Or연산자 조건문</title>
+</head>
+<body>
+  <script>
+    var numOne = prompt("1. 10미만인 숫자를 입력하세요."); // 12
+    var numTwo = prompt("2. 10미만인 숫자를 입력하세요."); // 5
+    if(numOne !== null&& numTwo!=null){
+      if(numOne < 10 || numTwo < 10) {
+        alert("숫자 2개 중에서 최소한 하나는 10미만입니다.");
+      } else {
+        alert("숫자 2개 중에서 10미만인 수가 없습니다.");
+      }
+    } else{
+      alert("숫자 2개 중에서 취소된 경우가 있습니다.")
+    }  
+    
+  </script>
+</body>
+</html>

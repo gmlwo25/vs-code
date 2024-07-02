@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 100px;
+      margin: 15px;
+      border: 1px solid blue;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    /* 오른쪽 윗부분에 그림자 
+      text-shadow에서 흐림정도, inset 추가
+    */  
+    .box1{
+      box-shadow: 2px -2px 5px 0px;
+    }
+    /* 오른쪽 아랫부분에 파란색 그림자 */
+    .box2{
+      box-shadow: 5px 5px 5px 5px blue;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+</body>
+</html>

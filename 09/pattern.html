@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그라데이션 반복하기</title>
+  <style>
+    /*
+    배경 이미지 관련 속성
+      background-color, background-clip
+      backgroud-image, bacckground-repeat: 반복 방법
+      background-position : 이미지 위치
+      background-origin, background-attachment
+      background: 축약속성
+      background-size
+    선형 그라데이션 관련 속성
+      방향 to left 와right
+      각도 deg
+      색상 중지점 : 색상만 또는 색상과 위치
+    원형 그라데이션
+      모양: ellipse(타원형), circle(원형)
+      크기: closest-side, colsest-corner
+            farthest-side, farthest-corner
+      위치 : at 키워드나 백분율 사용
+      색상 중지점: 색상만 지정하거나 색상과 중지점의 위치      
+    */
+    div{
+      width: 500px;
+      height: 300px;
+      border: 1px solid #222;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .grad1{
+      background: red;
+      background: repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px);
+    }
+    .grad2{
+      background: #ccc;
+      background: repeating-radial-gradient(circle, white, white 10%, #ccc 10%, #ccc 20%);
+    }
+  </style>
+</head>
+<body>
+  <div class="grad1"></div>
+  <div class="grad2"></div>
+</body>
+</html>

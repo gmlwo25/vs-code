@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스 모델 너비 지정하기</title>
+  <style>
+    div{
+      margin-bottom: 20px;
+
+    }
+    .box1{
+      width: 200px; /* 고정너비 */
+      height: 100px;
+      border: 10px solid #ccc;
+      padding: 20px;
+    }
+    .box2{
+      box-sizing: border-box; /* 중요 */
+      width: 200px;
+      height: 100px;
+      border: 10px solid #00f;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 선택자</title>
+  <style>
+    /*
+        가상 클래스 선택자(:) : 웹문서의 여러 요소 중에서 원하는 요소를 선택
+        가상 요소 선택자(::) : 문서 안에 특정 부분에 스타일 지정
+                               불필요한 태그를 사용하지 않도록 하기 위한 것
+    */
+
+    .container {
+      width: 960px;
+      margin: 0 auto;
+    }
+    ul li{
+      margin: 15px;
+    }
+    li.new::after{
+      content: "NEW!!";
+      font-size: x-small;
+      padding: 2px 4px;
+      margin: 0 10px;
+      border-radius: 2px;
+      background: #f00;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>제품 목록</h1>
+    <ul>
+      <li class="new">제품 A</li>
+      <li>제품 B</li>
+      <li>제품 C</li>
+      <li class="new">제품 D</li>
+    </ul>
+  </div>
+</body>
+</html>

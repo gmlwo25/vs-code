@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어 쿼리 사용하기</title>
+  <style>
+    body{
+      background: url(images/bg0.jpg) no-repeat fixed;
+      background-size: cover;
+    }
+    @media screen and (max-width:1024px) {
+      /* 가로가 1024px 이하면 bg1.jpg 지정 */
+      body{
+        background: url(images/bg1.jpg) no-repeat fixed;
+        background-size: cover;
+      }
+    }
+    @media screen and (max-width:768px) {
+      /* 가로가 768px 이하면 bg2.jpg 지정 */
+      body{
+        background: url(images/bg2.jpg) no-repeat fixed;
+        background-size: cover;
+      }
+    }
+    @media screen and (max-width:320px) {
+      /* 가로가 320px 이하면 bg3.jpg 지정 */
+      body{
+        background: url(images/bg3.jpg) no-repeat fixed;
+        background-size: cover;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>
