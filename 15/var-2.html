@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scope</title>
+</head>
+<body>
+  <h1>콘솔을 확인하세요</h1>
+  <script>
+
+
+    function addNumber() {
+      var sum = 10 + 20;
+      //console.log('지역변수 : ' + sum);
+      total = 10 * 20;  // 전역변수
+    }
+
+    addNumber();
+    console.log(total);  // 
+
+    for(var i = 0; i < 5 ; i++){
+      total += i;  
+    }
+
+    // console.log(i);  // let 범위 for, if블럭안으로 한정
+
+
+  </script>
+</body>
+</html>

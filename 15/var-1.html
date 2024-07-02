@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scope</title>
+</head>
+<body>
+  <h1>콘솔을 확인하세요</h1>
+  <script>
+    function addNumber() {
+      var sum = 10 + 20;
+      console.log('지역변수 : ' + sum);
+    }
+
+    addNumber();
+    // console.log(sum);  //함수 안에서는 var 지역변수 됨
+
+    for(var i = 0; i < 5 ; i++){
+      // 1. var선언방식 for블럭 if블럭 밖에도 참조 가능한 문제점
+    }
+
+
+  </script>
+</body>
+</html>

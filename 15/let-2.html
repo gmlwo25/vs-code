@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블럭 변수 선언하기</title>
+</head>
+<body>
+  <script>
+    function calcSum(n){
+      sum = 0; // 변수 앞에 타입을 지정않고 선언 - 전역변수
+      for(let i = 1; i < n+1; i++){
+        sum += i;
+      }
+      console.log(sum);
+    }
+    calcSum(10);
+    console.log(sum);
+  </script>
+</body>
+</html>

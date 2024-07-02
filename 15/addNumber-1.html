@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매개변수를 사용한 함수 선언하고 호출</title>
+  <style>
+    body{
+      padding-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function addNumber(num1, num2){
+      var sum = num1 + num2;
+      return sum;
+    }
+
+    function multiple(a, b = 5, c = 10){
+      return a * b + c;
+    }
+
+    // var result = addNumber(2, 3)
+    // document.write("두 수를 더한 값 : " + result)
+
+    var result = multiple(5, 10, 20);
+    document.write("multiple(5, 10, 20) =>" + result + "<br>");
+    var result1 = multiple(10, 20);
+    document.write("multiple(10, 20) =>" + result1 + "<br>");
+    var result2 = multiple(30);
+    document.write("multiple(30) =>" + result2 + "<br>");
+    
+    var result3 = multiple();
+    document.write("multiple() =>" + result3 + "<br>"); // NaN 
+  
+  </script>
+</body>
+</html>

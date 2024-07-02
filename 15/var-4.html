@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>var문제점- 재선언</title>
+</head>
+<body>
+  <h1>콘솔확인</h1>
+  <script>
+    function addNumber(num1, num2) {
+      return num1 + num2;
+    }
+    var sum = addNumber(10, 20);
+    console.log(sum);
+    sum = 50;  //재할당
+
+    console.log(sum);
+    var sum  = 100; // 3. var변수의 문제점 재선언 가능 - 오류발생가능성
+    console.log(sum);
+    // let sum = addNumber(10, 20);
+    // console.log(sum);
+    // sum = 50;  //재할당
+
+    // console.log(sum);
+    // let sum  = 100; // 재선언
+    // console.log(sum);
+
+
+
+  </script>
+</body>
+</html>
