@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제2</title>
+</head>
+<body>
+  <script>
+    function compareTwo(x, y){
+    if( x === y){
+      alert( "두 수가 같습니다.")
+    }else if( x > y ){
+      alert(x + "(이)가" + y + "보다 큽니다");
+    }else{
+      alert(x + "(이)가" + y + "보다 작습니다");
+      }
+    }
+    
+
+    var n1 = parseInt(prompt("비교할 첫 번째 숫자: "));
+    var n2 = parseInt(prompt("비교할 두 번째 숫자: "));
+
+    compareTwo(n1, n2);
+  </script>
+</body>
+</html>

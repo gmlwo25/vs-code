@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트와 이벤트 처리기</title>
+  <link rel="stylesheet" href="css/function.css">
+</head>
+<body>
+  <button id="change">글자색 바꾸기</button>   
+  <p>Reprehenderit tempor do quis sunt eu et exercitation deserunt. 
+    Laboris adipisicing est sint aliquip nulla pariatur velit irure elit qui id. 
+    Dolore aliquip dolore eu ut irure sint Lorem reprehenderit velit. 
+    Duis veniam irure cillum anim excepteur culpa pariatur sunt esse.
+    Eu nulla commodo velit ex id dolore incididunt mollit incididunt nisi labore culpa qui ea. 
+    Commodo veniam veniam in ipsum ad minim occaecat qui pariatur adipisicing laborum quis.</p>
+    
+    <script>
+      /*
+      함수 선언하고 호출
+        function 함수명() {
+          수행문;
+        }
+        호출 : 함수명();
+                var,       let,      const 비교
+      구분
+      스코프  함수레벨  블록 레벨   블록레벨
+      재할당    가능       가능       불가능
+      재선언    가능      불가능      불가능
+
+
+      # 함수표현식
+      익명 함수 : 이름 없이 선언한 함수 function(매개변수) { 명령문 }
+      즉시 실행 함수(익명함수);  (funcion(매개변수) {명령문} (인수));
+      화살표 함수 : (매개변수) => { 함수 내용 }
+
+      # 이벤트와 이벤트 처리기
+      이벤트 : 키보드에서 키를 누르거나 마우스로 클릭 등을 하거나 
+                브라우저가 웹 페이지를 불러오는 것처럼 웹브라우저나 사용자가 행하는 동작
+      이벤트 처리기 : 웹문서에서 이벤트 발생할 때 그 이벤트에 반응해서 실행하는 함수
+      
+      */
+
+
+      // //방법 1
+      // var changeBtn = document.querySelector("#change");
+      // changeBtn.onclick = changeColor;
+      // function changeColor() {
+      //   document.querySelector("p").style.color = "#f00";
+      // }
+      
+      // //방법 2 변수 선언 없이
+      // document.querySelector("#change").onclick =  changeColor;
+      // function changeColor(){
+      //   document.querySelector("p").style.color = "#f00";
+      // }
+
+      //방법 3 익명함수로
+      // document.querySelector("#change").onclick = function(){
+      //   document.querySelector("p").style.color = "#f00";
+      // }
+
+      //방법 4
+      document.querySelector("#change").onclick = 
+        () => document.querySelector("p").style.color = "#f00";
+    </script>
+</body>
+</html>
