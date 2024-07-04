@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현재 시간 보기</title>
+  <style>
+    #container{
+      width:200px;
+      margin:50px auto;
+    }
+    button {
+      border:1px solid #ccc;
+      background:#fff;
+      padding:20px 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <button id="bttn">현재 시간 보기</button>
+  </div>
+
+  <script>
+    document.querySelector('#bttn').onclick = function(){ 
+    displayTime("sol-1.html", "pop", 400, 200);
+    }
+
+    function displayTime(doc, win, w, h){
+      var left = (screen.availWidth - w)/2;
+      var top = (screen.availHeight - h)/2;
+      var opt = "left= " +left +", top=" +top + ", width=" + w + ", height=" + h;
+      window.open(doc, win, opt);
+    }
+
+    
+  
+  </script>
+</body>
+</html>

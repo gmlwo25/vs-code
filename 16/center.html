@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window 객체</title>
+</head>
+<body>
+  <p>문서를 열면 팝업 창이 표시됩니다.</p>
+  <script>
+    /*
+    객체(object): 프로그램에서 인식할 수 있는 모든 대상
+    - 구성요소 : 프로퍼티 - 객체의 특징이나 속성
+                  메서드 - 객체에서 할 수 있는 동작이나 기능
+    - 사용방법 : new 객체명
+                  객체명.프로퍼티, 객체명.메서드
+    내장 객체
+    - window, *document, navigator, history, *location, screen
+
+    */
+    function openCenter(doc, win, w, h){
+      var left = (screen.availWidth - w) / 2; //팝업 창의 왼쪽 좌표
+      var top = (screen.availHeight - h) / 2; //팝업 창의 위쪽 좌표
+      var opt = "left = " + left + " , top = " + top + ", width=" + w + " , height=" + h;
+      window.open(doc, win, opt);
+    }
+
+    openCenter("notice.html", "pop", 500, 400);
+
+    // window.open("notice.html", "pop" , "width=500, height=400");
+  </script>
+</body>
+</html>
