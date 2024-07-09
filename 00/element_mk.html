@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소 생성</title>
+</head>
+<body>
+  <h1>요소 생성</h1>
+  <p>Hello</p>
+  <p>JavaScript</p>
+  <script>
+    // <a href="https://www.ikosmo.co.kr/main">링크</a>
+    const aE1 = document.createElement("a");
+    const textNode = document.createTextNode("링크");
+
+    const hrefAttr = document.createAttribute("href");
+    hrefAttr.value = "https://www.ikosmo.co.kr/main";
+    
+    aE1.setAttributeNode(hrefAttr);
+    aE1.appendChild(textNode);
+    document.body.appendChild(aE1);
+
+    //삭제
+    // const hE1 = document.querySelector("h1");
+    // hE1.parentNode.removeChild(hE1);
+
+    // const pE1 = document.querySelectorAll("p");
+    // pE1.forEach(el => {
+    //   el.parentNode.removeChild(el);
+    // });
+
+    const childNodes = document.body.childNodes;
+    childNodes.forEach((node) => {
+      console.log(node.nodeName);
+      if(node.nodeName === 'P'){
+        node.parentNode.removeChild(node);
+      }
+    });
+  </script>
+</body>
+</html>

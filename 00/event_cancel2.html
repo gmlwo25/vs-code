@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event cancel</title>
+</head>
+<body>
+  <a href="https://www.naver.com">메뉴 1</a>
+  <a href="https://www.naver.com">메뉴 2</a>
+  <script>
+    const aE1s = document.querySelector('a');
+
+    aE1s.forEach(()=>{
+      el.addEventListener("click", (e)=>{e.preventDefault()});
+    });
+
+    aE1.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+    
+  </script>
+</body>
+</html>

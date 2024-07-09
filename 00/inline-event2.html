@@ -1,0 +1,26 @@
+<!DOCTYPE html>dd
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inline event</title>
+</head>
+<body>
+  <input type="text" onfocus="focusEvent()" onkeydown="keyEvent()">
+  <button onclick="clickEvent()">조회</button>
+  <script>
+    //이벤트 핸들러 (이벤트 처리기)
+    function clickEvent(){
+      console.log("click!");
+    }
+
+    function keyEvent(event){
+      console.log("key click!!!");
+    }
+
+    function focusEvent(){
+      console.log("focus click!");
+    }
+  </script>
+</body>
+</html>

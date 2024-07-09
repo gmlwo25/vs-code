@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>forms_element</title>
+</head>
+<body>
+  <form name="frm1">
+    <label for="uname">이름</label>
+    <input type="text" id="uname" name="uname" value="코스모">
+    <label for="age">나이</label>
+    <input type="text" id="age" name="age">
+    <label for="gender">성별</label>
+    <select name="gender" id="gender">
+      <option value="male">male</option>
+      <option value="female">female</option>
+    </select>
+    <button type="submit">전송</button>
+  </form>
+  <script>
+    const frmE1 = document.frm1;
+  //  console.log(frmE1.elements);
+    console.log(frmE1.elements.uname.value);
+
+    frmE1.elements.uname.value = "이순신";
+  </script>
+</body>
+</html>

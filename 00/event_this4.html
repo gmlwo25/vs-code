@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this</title>
+</head>
+<body>
+  <p>menu-1</p>
+  <p>menu-2</p>
+  <p>menu-3</p>
+  <script>
+    const pEls = document.querySelectorAll("p");
+    pEls.forEach((el) => {
+      el.addEventListener("click", (e) => {
+        if(e.target.style.color === 'red'){
+          e.target.style.color = 'black';
+        }else {
+          e.target.style.color = 'red';
+        }
+      });
+    });
+
+  </script>
+
+
+</body>
+</html>

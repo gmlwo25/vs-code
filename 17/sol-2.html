@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제 2</title>
+  <style>
+    form{
+      margin-bottom: 30px;
+    }
+    input[type="text"]{
+      width: 30px;
+      height: 20px;
+      text-align: center;
+    }
+    button{
+      margin-left: 10px;
+    }
+    table{
+      width: 300px;
+    }
+    table, td{
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+    td{
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <input type="text" id="rCount" value="1">행
+    <input type="text" id="cCount" value="1">열
+    <button onclick="writeTable(); return false;">작성</button>
+  </form>
+  <div id="contents"></div>
+  <script>
+/* 새로운 요소 추가하기 - tag: createElement(), 
+      text: createTextNode(), 자식요소로추가: appendChild()
+      속성 생성 - createAttribute(). setAttributeNode(): 요소에 속성 추가
+*/
+    function writeTable(){
+      //여기에 코드를 작성해주세요
+      var rowCount = document.querySelector("#rCount").value;
+      var colCount = document.querySelector("#cCount").value;
+      var newtable = document.createElement("table");
+      
+      for(i=0; i<rowCount; i++){
+        var newrow = document.createElement("tr");
+          for(d=0; d<colCount; d++){
+            var newcol = document.createElement("td");
+            var newtext = document.createTextNode(i + "," + d);
+            newcol.appendChild(newtext);
+            newrow.appendChild(newcol);
+          };
+      newtable.appendChild(newrow);
+    }
+      var contents = document.querySelector("#contents");
+      contents.appendChild(newtable);
+    }
+  </script>
+</body>
+</html>

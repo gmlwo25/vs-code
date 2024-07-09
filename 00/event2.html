@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event</title>
+</head>
+<body>
+  <input type="text">
+  <button>클릭</button>
+  <script>
+    const btnE1 = document.querySelector("button");
+    btnE1.onclick = function(){
+      console.log('click event');
+    };
+
+    const inputE1 = document.querySelector("input");
+    inputE1.onfocus = focusEvent;
+
+    function focusEvent(){
+      console.log('focus event');
+    }
+
+  </script>
+</body>
+</html>

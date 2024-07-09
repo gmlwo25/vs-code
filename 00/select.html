@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <select name="" id="">
+      <option value="apple">사과</option>
+      <option value="banana" selected>바나나</option>
+      <option value="orange">오렌지</option>
+      <option value="melon">멜론</option>
+    </select>
+  </form>
+  <script>
+    const optionEls = document.forms[0].elements[0].children;
+    // const optionEls = document.querySelectorAll("option");
+    // optionEls.forEach(function(el){
+    //   // console.log(el);
+    //   if(el.selected){
+    //     console.log(el.value)
+    //   }
+    // });
+
+  
+    // Array.prototype.forEach.call(optionEls, (el) => {
+    //   //console.log(el.selected);
+    //   if(el.selected){
+    //     console.log(el.value);
+    //   }
+    // });
+
+    Array.prototype.forEach.call(optionEls, (el) => {
+      if(el.value === 'orange'){
+        el.selected = true;
+      }
+    });
+
+  </script>
+</body>
+</html>

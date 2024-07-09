@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event cancel</title>
+</head>
+<body>
+  <a href="https://www.naver.com">네이버 이동</a>
+  <script>
+    const aE1 = document.querySelector('a');
+    aE1.addEventListener("click", (e) => {
+      e.preventDefault();
+      searchGo();
+    })
+    function searchGo(){
+      console.log("검색 ....");
+    }
+  </script>
+</body>
+</html>

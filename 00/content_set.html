@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Modify Set</title>
+</head>
+<body>
+  <p id="textContent">hello, </p>
+  <p id="innerText">hello, </p>
+  <p id="innerHTML"></p>
+  <script>
+    // a = a + 1; a += 1;
+    document.querySelector('#textContent').textContent += 
+      '<strong> hello, world</strong>'; // textContent는 공백 있어도 공백을 그대로 가져옴
+    document.querySelector('#innerText').innerText += 
+      '<strong> hello, world</strong>';  // innerText는 공백이 있어도 내용만 가져옴
+    document.querySelector('#innerHTML').innerHTML += 
+      '<strong> hello, world</strong>';  
+  </script>
+</body>
+</html>
