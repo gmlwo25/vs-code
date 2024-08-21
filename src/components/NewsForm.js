@@ -15,6 +15,7 @@ function NewsForm({
   initialValues = INITIAL_VALES,
   initialPreview,
   onCancel,
+  onSubmit,
   onSubmitSuccess,
 }) {
   // const [title, setTitle] = useState("");
@@ -42,7 +43,7 @@ function NewsForm({
   // const handleTitleChange = (e) => {
   //   setTitle(e.target.value);
   // };
-  // const 최근 영화관 티켓값이 비싸다며 돌직구를 날린 최민식을 향해 KAIST 교수가 "무지한 소리"라며 비판했다.handleRatingChange = (e) => {
+  // const handleRatingChange = (e) => {
   //   const nextRating = Number(e.target.value) || 0;
   //   setRating(nextRating);
   // };
@@ -67,7 +68,7 @@ function NewsForm({
     try {
       setSubmittingError(null);
       setIsSubmitting(true); // 등록중
-      result = await createNews(formData);
+      result = await onSubmit(formData); // 키포인트 : createNews, updateNews
     } catch (error) {
       setSubmittingError(error);
       return;

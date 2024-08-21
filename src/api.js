@@ -26,3 +26,28 @@ export async function createNews(formData) {
   const body = await response.json();
   return body;
 }
+
+export async function updateNews(aid, formData) {
+  const response = await fetch(`${BASE_URL}/news/${aid}`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!response.ok) {
+    throw new Error("뉴스를 수정하는데 실패했습니다.");
+  }
+
+  const body = await response.json();
+  return body;
+}
+
+export async function deleteNews(aid) {
+  const response = await fetch(`${BASE_URL}/news/del/${aid}`, {
+    method: "POST",
+  });
+  if (!response.ok) {
+    throw new Error("뉴스를 삭제하는데 실패했습니다.");
+  }
+
+  const body = await response.json();
+  return body;
+}

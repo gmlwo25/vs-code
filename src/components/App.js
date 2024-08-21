@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NewsList from "./NewsList";
-import { getNews } from "../api";
 import NewsForm from "./NewsForm";
+import { getNews, createNews, updateNews, deleteNews } from "../api";
 
 const LIMIT = 6;
 
@@ -17,10 +17,16 @@ function App() {
 
   const handleNewestClick = () => setOrder("aid");
   const handleBestClick = () => setOrder("rating");
-  const handleDelete = (aid) => {
-    // filter로 뉴스 아이템 삭제하기
-    const nextItems = items.filter((item) => item.aid !== aid);
-    setItems(nextItems);
+  const handleDelete = async (aid) => {
+    try {
+      // filter로 뉴스 아이템 삭제하기
+      deleteNews(aid);
+      const nextItems = items.filter((item) => item.aid !== aid);
+      setItems(nextItems);
+    } catch (error) {
+      // 삭제 실패 처리
+      console.error("Error deleting news", error);
+    }
   };
 
   const handleLoad = async (options) => {
@@ -31,6 +37,7 @@ function App() {
       setIsLoading(true); // 진행중 시작
       result = await getNews(options);
     } catch (error) {
+      setLoadingError(error);
       return;
     } finally {
       setIsLoading(false); // 진행중 종료
@@ -53,8 +60,19 @@ function App() {
     await handleLoad({ order, offset, limit: LIMIT });
   };
 
-  const handleSubmitSuccess = (news) => {
+  const handleCreateSuccess = (news) => {
     setItems((prevItems) => [news, ...prevItems]);
+  };
+
+  const handleUpdateSuccess = (news) => {
+    setItems((prevItems) => {
+      const splitIdx = prevItems.findIndex((item) => item.aid === news.aid);
+      return [
+        ...prevItems.slice(0, splitIdx),
+        news,
+        ...prevItems.slice(splitIdx + 1),
+      ];
+    });
   };
 
   // 마운트 시점과  정렬컬럼이 바뀔때 비동기 통신 요청
@@ -68,8 +86,13 @@ function App() {
         <button onClick={handleNewestClick}>최신순</button>
         <button onClick={handleBestClick}>베스트순</button>
       </div>
-      <NewsForm onSubmitSuccess={handleSubmitSuccess} />
-      <NewsList items={sortedItems} onDelete={handleDelete} />
+      <NewsForm onSubmit={createNews} onSubmitSuccess={handleCreateSuccess} />
+      <NewsList
+        items={sortedItems}
+        onDelete={handleDelete}
+        onUpdate={updateNews}
+        onUpdateSuccess={handleUpdateSuccess}
+      />
       {hasNext && (
         <button disabled={isLoading} onClick={handleLoadMore}>
           더보기

@@ -1,7 +1,7 @@
-import "./NewsList.css";
+import { useState } from "react";
 import Rating from "./Rating";
 import NewsForm from "./NewsForm";
-import { useState } from "react";
+import "./NewsList.css";
 
 function formatDate(value) {
   const date = new Date(value);
@@ -14,7 +14,7 @@ function NewsListItem({ item, onDelete, onEdit }) {
   };
   const { img, title, rating, date, content } = item;
 
-  const handleEdit = () => {
+  const handleEditClick = () => {
     onEdit(item.aid);
   };
   return (
@@ -25,33 +25,43 @@ function NewsListItem({ item, onDelete, onEdit }) {
         <Rating value={rating} />
         <p>{formatDate(date)}</p>
         <p>{content}</p>
-        <button onClick={handleEdit}>수정</button>
+        <button onClick={handleEditClick}>수정</button>
         <button onClick={handleDeleteClick}>삭제</button>
       </div>
     </div>
   );
 }
 
-function NewsList({ items, onDelete }) {
-  const [editingId, setEditingId] = useState(null);
+function NewsList({ items, onUpdate, onUpdateSuccess, onDelete }) {
+  const [editingId, setEditingId] = useState(null); //15
   const handleCancel = () => setEditingId(null);
-
   return (
     <ul className="NewsList">
       {items.map((item) => {
         if (item.aid === editingId) {
-          const { img, title, rating, content } = item;
+          const { aid, img, title, rating, content } = item;
           const initialValues = { title, rating, content, imgFile: null };
+
+          const handleSubmit = (formData) => onUpdate(aid, formData);
+
+          const handleSubmitSuccess = (news) => {
+            onUpdateSuccess(news);
+            setEditingId(null);
+          };
+
           return (
             <li key={item.aid}>
               <NewsForm
                 initialValues={initialValues}
                 initialPreview={img}
+                onSubmit={handleSubmit}
+                onSubmitSuccess={handleSubmitSuccess}
                 onCancel={handleCancel}
               />
             </li>
           );
         }
+
         return (
           <li key={item.aid}>
             <NewsListItem
